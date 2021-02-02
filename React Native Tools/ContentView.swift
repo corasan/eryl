@@ -11,34 +11,27 @@ struct ContentView: View {
     var body: some View {
 		NavigationView {
 			VStack(alignment: .leading) {
-				Text("Logs")
+				Text("React Native Logs")
 					.font(.title)
 					.fontWeight(.bold)
-					.padding(.vertical, 10)
-				Text("CodePush logs")
+					.padding(.vertical, 20)
+				Text("CodePush log")
 					.font(.title)
 					.fontWeight(.bold)
-					.padding(.vertical, 10)
+					.padding(.vertical, 20)
 				
 				VStack(alignment: .leading) {
-					Text("Start")
-						.font(.title)
-						.fontWeight(.bold)
-						.padding(.vertical, 10)
-					Text("CodePush")
-						.font(.title)
-						.fontWeight(.bold)
-						.padding(.vertical, 10)
-					Text("Run App")
-						.font(.title)
-						.fontWeight(.bold)
-						.padding(.vertical, 10)
+					ActionButton(label: "Start", icon: "play.fill")
+					ActionButton(label: "CodePush", icon: "arrow.clockwise.icloud.fill")
+					ActionButton(label: "Run Simulator", icon: "iphone")
+					ActionButton(label: "Run Device", icon: "iphone.badge.play")
 				}
 				.padding(.top, 50)
 				Spacer()
 			}
 			.padding(.vertical, 40)
-			.frame(width: 240)
+			.padding(.horizontal, 25)
+			.frame(width: 280)
 		}
 	}
 }
