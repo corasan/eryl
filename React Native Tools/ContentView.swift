@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+	@EnvironmentObject var stocket: Stocket
+
     var body: some View {
 		NavigationView {
 			VStack(alignment: .leading) {
@@ -25,7 +27,7 @@ struct ContentView: View {
 				}
 				
 				VStack(alignment: .leading) {
-					ActionButton(label: Stocket.isRunning ? "Stop" : "Start", icon: "\(Stocket.isRunning ? "stop" : "play").fill", action: Stocket.start)
+					ActionButton(label: stocket.isRunning ? "Stop" : "Start", icon: "\(stocket.isRunning ? "stop" : "play").fill", action: stocket.start)
 					ActionButton(label: "CodePush", icon: "arrow.clockwise.icloud.fill")
 					ActionButton(label: "Run Simulator", icon: "iphone")
 					ActionButton(label: "Run Device", icon: "iphone.badge.play")

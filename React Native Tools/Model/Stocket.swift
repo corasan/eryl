@@ -9,7 +9,7 @@ import Foundation
 
 class Stocket: ObservableObject {
 	@Published var isRunning: Bool = false
-	@Published var server: Process?
+	var server: Process?
 	private var path = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 	
 	init() {
@@ -32,7 +32,13 @@ class Stocket: ObservableObject {
 		self.server!.arguments = ["-c", "yarn start"]
 		self.server!.launchPath = "/bin/zsh"
 		self.server!.launch()
-
+		
+		DispatchQueue.main.async {
+			if(self.server != nil) {
+				self.isRunning = self.server!.isRunning
+			}
+		}
+		
 		let data = pipe.fileHandleForReading.readDataToEndOfFile()
 		let output = String(data: data, encoding: .utf8)!
 		
