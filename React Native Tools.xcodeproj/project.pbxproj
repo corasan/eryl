@@ -12,6 +12,7 @@
 		BA12E72825C9D0CB00E8CEA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA12E72725C9D0CB00E8CEA5 /* Assets.xcassets */; };
 		BA12E72B25C9D0CB00E8CEA5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA12E72A25C9D0CB00E8CEA5 /* Preview Assets.xcassets */; };
 		BA12E73725C9EEB600E8CEA5 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E73625C9EEB600E8CEA5 /* ActionButton.swift */; };
+		BA12E73B25C9FBCD00E8CEA5 /* Stocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E73A25C9FBCD00E8CEA5 /* Stocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		BA12E72C25C9D0CB00E8CEA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA12E72D25C9D0CB00E8CEA5 /* React_Native_Tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = React_Native_Tools.entitlements; sourceTree = "<group>"; };
 		BA12E73625C9EEB600E8CEA5 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		BA12E73A25C9FBCD00E8CEA5 /* Stocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stocket.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 		BA12E72225C9D0CA00E8CEA5 /* React Native Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BA12E73925C9FBBA00E8CEA5 /* Model */,
 				BA12E73425C9EA7900E8CEA5 /* Components */,
 				BA12E72325C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift */,
 				BA12E72525C9D0CA00E8CEA5 /* ContentView.swift */,
@@ -80,6 +83,14 @@
 				BA12E73625C9EEB600E8CEA5 /* ActionButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		BA12E73925C9FBBA00E8CEA5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA12E73A25C9FBCD00E8CEA5 /* Stocket.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA12E72625C9D0CA00E8CEA5 /* ContentView.swift in Sources */,
+				BA12E73B25C9FBCD00E8CEA5 /* Stocket.swift in Sources */,
 				BA12E72425C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift in Sources */,
 				BA12E73725C9EEB600E8CEA5 /* ActionButton.swift in Sources */,
 			);

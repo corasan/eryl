@@ -11,17 +11,21 @@ struct ContentView: View {
     var body: some View {
 		NavigationView {
 			VStack(alignment: .leading) {
-				Text("React Native Logs")
-					.font(.title)
-					.fontWeight(.bold)
-					.padding(.vertical, 20)
-				Text("CodePush log")
-					.font(.title)
-					.fontWeight(.bold)
-					.padding(.vertical, 20)
+				VStack {
+					NavigationLink(
+						destination: Text("Destination")) {
+						Text("React Native Logs")
+					}
+					.buttonStyle(CustomButtonStyle())
+					NavigationLink(
+						destination: Text("Destination2")) {
+						Text("CodePush Logs")
+					}
+					.buttonStyle(CustomButtonStyle())
+				}
 				
 				VStack(alignment: .leading) {
-					ActionButton(label: "Start", icon: "play.fill")
+					ActionButton(label: Stocket.isRunning ? "Stop" : "Start", icon: "\(Stocket.isRunning ? "stop" : "play").fill", action: Stocket.start)
 					ActionButton(label: "CodePush", icon: "arrow.clockwise.icloud.fill")
 					ActionButton(label: "Run Simulator", icon: "iphone")
 					ActionButton(label: "Run Device", icon: "iphone.badge.play")
