@@ -29,8 +29,8 @@ struct ContentView: View {
 				VStack(alignment: .leading) {
 					ActionButton(label: app.isRunning ? "Stop" : "Start", icon: "\(app.isRunning ? "stop" : "play").fill", action: app.isRunning ? app.stop : app.start)
 					ActionButton(label: "CodePush", icon: "arrow.clockwise.icloud.fill")
-					ActionButton(label: "Run Simulator", icon: "iphone", action: app.runOnSimulator)
-					ActionButton(label: "Run Device", icon: "iphone.badge.play")
+					ActionButton(label: "Run Simulator", icon: "iphone.badge.play", action: app.runOnSimulator)
+					ActionButton(label: "Run Device", icon: "iphone")
 				}
 				.padding(.top, 50)
 				Spacer()
@@ -46,5 +46,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
 			.frame(width: 1240, height: 820, alignment: .center)
+			.environmentObject(ReactNativeAppTools())
     }
 }
