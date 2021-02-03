@@ -14,7 +14,8 @@ class Stocket: ObservableObject {
 	var output = ""
 	private var path = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 	private var dispatchGroup: DispatchGroup
-	
+	private var projectPath = "/Users/henry/Projects/ReactNative/stocket"
+
 	init() {
 		self.server = nil
 		self.pipe = nil
@@ -26,12 +27,15 @@ class Stocket: ObservableObject {
 			self.dispatchGroup.enter()
 			DispatchQueue(label: "React Native Server", qos: .background).async {
 				self.startServer()
-				self.dispatchGroup.leave()
+				if (self.server != nil) {
+					self.dispatchGroup.leave()
+				}
 			}
 			self.isRunning = true
 			
 			self.dispatchGroup.enter()
 			DispatchQueue(label: "React Native Server", qos: .background).async {
+				self.dispatchGroup.wait()
 				self.startServerOutputPipe()
 			}
 		}
@@ -44,12 +48,22 @@ class Stocket: ObservableObject {
 		DispatchQueue.main.async { self.isRunning = false }
 	}
 	
+	func runOnSimulator() {
+		let process = createProcess("yarn ios")
+		process.launch()
+	}
+	
+	private func createProcess(_ command: String) -> Process {
+		let process = Process()
+		process.environment = ["PATH": path]
+		process.currentDirectoryPath = self.projectPath
+		process.launchPath = "/bin/zsh"
+		process.arguments = ["-c", command]
+		return process
+	}
+	
 	private func startServer() {
-		self.server = Process()
-		self.server!.environment = ["PATH": path]
-		self.server!.currentDirectoryPath = "/Users/henry/Projects/ReactNative/stocket"
-		self.server!.arguments = ["-c", "yarn start"]
-		self.server!.launchPath = "/bin/zsh"
+		self.server = createProcess("yarn start")
 		self.server!.launch()
 	}
 	
