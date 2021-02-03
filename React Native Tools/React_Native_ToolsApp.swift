@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct React_Native_ToolsApp: App {
-	var app: App = App()
+	var app: ReactNativeAppTools = ReactNativeAppTools()
 
     var body: some Scene {
         WindowGroup {

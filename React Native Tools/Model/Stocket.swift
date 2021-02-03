@@ -53,6 +53,11 @@ class Stocket: ObservableObject {
 		process.launch()
 	}
 	
+	func runOnDevice() {
+		let process = createProcess("yarn ios-device")
+		process.launch()
+	}
+	
 	private func createProcess(_ command: String) -> Process {
 		let process = Process()
 		process.environment = ["PATH": path]

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-	@EnvironmentObject var app: App
+	@EnvironmentObject var app: ReactNativeAppTools
 
     var body: some View {
 		NavigationView {

@@ -7,7 +7,7 @@
 
 import Foundation
 
-class App: ObservableObject {
+class ReactNativeAppTools: ObservableObject {
 	@Published var isRunning: Bool = false
 	var server: Process?
 	var pipe: Pipe?
