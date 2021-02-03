@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-	@EnvironmentObject var stocket: Stocket
+	@EnvironmentObject var app: App
 
     var body: some View {
 		NavigationView {
@@ -27,9 +27,9 @@ struct ContentView: View {
 				}
 				
 				VStack(alignment: .leading) {
-					ActionButton(label: stocket.isRunning ? "Stop" : "Start", icon: "\(stocket.isRunning ? "stop" : "play").fill", action: stocket.isRunning ? stocket.stop : stocket.start)
+					ActionButton(label: app.isRunning ? "Stop" : "Start", icon: "\(app.isRunning ? "stop" : "play").fill", action: app.isRunning ? app.stop : app.start)
 					ActionButton(label: "CodePush", icon: "arrow.clockwise.icloud.fill")
-					ActionButton(label: "Run Simulator", icon: "iphone", action: stocket.runOnSimulator)
+					ActionButton(label: "Run Simulator", icon: "iphone", action: app.runOnSimulator)
 					ActionButton(label: "Run Device", icon: "iphone.badge.play")
 				}
 				.padding(.top, 50)
