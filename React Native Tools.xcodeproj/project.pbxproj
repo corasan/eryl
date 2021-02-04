@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA0045F225CB86CD00D538B4 /* TerminalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0045F125CB86CD00D538B4 /* TerminalText.swift */; };
 		BA12E72425C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E72325C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift */; };
 		BA12E72625C9D0CA00E8CEA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E72525C9D0CA00E8CEA5 /* ContentView.swift */; };
 		BA12E72825C9D0CB00E8CEA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA12E72725C9D0CB00E8CEA5 /* Assets.xcassets */; };
@@ -14,9 +15,11 @@
 		BA12E73725C9EEB600E8CEA5 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E73625C9EEB600E8CEA5 /* ActionButton.swift */; };
 		BA12E73B25C9FBCD00E8CEA5 /* Stocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E73A25C9FBCD00E8CEA5 /* Stocket.swift */; };
 		BA12E73E25CB39B700E8CEA5 /* ReactNativeAppTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E73D25CB39B700E8CEA5 /* ReactNativeAppTools.swift */; };
+		BA12E74325CB3C0600E8CEA5 /* ReactNativeLogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E74225CB3C0600E8CEA5 /* ReactNativeLogs.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BA0045F125CB86CD00D538B4 /* TerminalText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalText.swift; sourceTree = "<group>"; };
 		BA12E72025C9D0CA00E8CEA5 /* React Native Tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "React Native Tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA12E72325C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = React_Native_ToolsApp.swift; sourceTree = "<group>"; };
 		BA12E72525C9D0CA00E8CEA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +30,7 @@
 		BA12E73625C9EEB600E8CEA5 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		BA12E73A25C9FBCD00E8CEA5 /* Stocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stocket.swift; sourceTree = "<group>"; };
 		BA12E73D25CB39B700E8CEA5 /* ReactNativeAppTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNativeAppTools.swift; sourceTree = "<group>"; };
+		BA12E74225CB3C0600E8CEA5 /* ReactNativeLogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNativeLogs.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 		BA12E72225C9D0CA00E8CEA5 /* React Native Tools */ = {
 			isa = PBXGroup;
 			children = (
+				BA12E74125CB3BED00E8CEA5 /* Screens */,
 				BA12E73925C9FBBA00E8CEA5 /* Model */,
 				BA12E73425C9EA7900E8CEA5 /* Components */,
 				BA12E72325C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift */,
@@ -83,6 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				BA12E73625C9EEB600E8CEA5 /* ActionButton.swift */,
+				BA0045F125CB86CD00D538B4 /* TerminalText.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -94,6 +100,14 @@
 				BA12E73D25CB39B700E8CEA5 /* ReactNativeAppTools.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		BA12E74125CB3BED00E8CEA5 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				BA12E74225CB3C0600E8CEA5 /* ReactNativeLogs.swift */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +182,8 @@
 				BA12E72625C9D0CA00E8CEA5 /* ContentView.swift in Sources */,
 				BA12E73B25C9FBCD00E8CEA5 /* Stocket.swift in Sources */,
 				BA12E72425C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift in Sources */,
+				BA12E74325CB3C0600E8CEA5 /* ReactNativeLogs.swift in Sources */,
+				BA0045F225CB86CD00D538B4 /* TerminalText.swift in Sources */,
 				BA12E73E25CB39B700E8CEA5 /* ReactNativeAppTools.swift in Sources */,
 				BA12E73725C9EEB600E8CEA5 /* ActionButton.swift in Sources */,
 			);
