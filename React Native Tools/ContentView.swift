@@ -21,7 +21,7 @@ struct ContentView: View {
 				
 				VStack(alignment: .leading) {
 					ActionButton(label: app.isRunning ? "Stop" : "Start", icon: "\(app.isRunning ? "stop" : "play").fill", action: app.isRunning ? app.stop : app.start)
-					ActionButton(label: "CodePush", icon: "arrow.clockwise.icloud.fill")
+//					ActionButton(label: "CodePush", icon: "arrow.clockwise.icloud.fill")
 					ActionButton(label: "Run Simulator", icon: "iphone.badge.play", action: app.runOnSimulator)
 					ActionButton(label: "Run Device", icon: "iphone")
 				}
