@@ -9,14 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
 	@EnvironmentObject var app: ReactNativeAppTools
+	@State var showFirst = true
 
     var body: some View {
 		NavigationView {
 			VStack(alignment: .leading) {
 				List {
-					NavLink("React Native Logs", destination: AnyView(ReactNativeLogs()))
-					NavLink("CodePush Logs", destination: AnyView(ReactNativeLogs()))
-					Spacer()
+					NavigationLink(destination: ReactNativeLogs(), isActive: $showFirst) {
+						Text("React Native Logs")
+							.font(.title)
+					}
+					NavigationLink(destination: Text("Destination 2")) {
+						Text("CodePush Logs")
+							.font(.title)
+					}
 				}
 				
 				VStack(alignment: .leading) {
@@ -31,6 +37,9 @@ struct ContentView: View {
 			}
 			.padding(.vertical, 40)
 			.frame(width: 280)
+		}
+		.onAppear {
+			self.showFirst = true
 		}
 	}
 }
