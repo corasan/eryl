@@ -15,7 +15,7 @@ struct ContentView: View {
 			VStack(alignment: .leading) {
 				VStack {
 					NavigationLink(
-						destination: Text("Destination")) {
+						destination: ReactNativeLogs()) {
 						Text("React Native Logs")
 					}
 					.buttonStyle(CustomButtonStyle())

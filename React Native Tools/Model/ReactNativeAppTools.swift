@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import SwiftUI
 
 class ReactNativeAppTools: ObservableObject {
 	@Published var isRunning: Bool = false
 	var server: Process?
 	var pipe: Pipe?
-	var output = ""
+	@Published var output = [String]()
 	private var path = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 	private var dispatchGroup: DispatchGroup
 	private var projectPath = "/Users/henry/Projects/ReactNative/stocket"
@@ -24,20 +25,15 @@ class ReactNativeAppTools: ObservableObject {
 	
 	func start() {
 		DispatchQueue.main.async {
-			self.dispatchGroup.enter()
+			let group1 = DispatchGroup()
+			group1.enter()
 			DispatchQueue(label: "React Native Server", qos: .background).async {
-				self.startServer()
-				if (self.server != nil) {
-					self.dispatchGroup.leave()
+				if (self.server == nil) {
+					self.startServer()
+					group1.leave()
 				}
 			}
 			self.isRunning = true
-			
-			self.dispatchGroup.enter()
-			DispatchQueue(label: "Server Output", qos: .background).async {
-				self.dispatchGroup.wait()
-				self.startServerOutputPipe()
-			}
 		}
 	}
 	
@@ -64,14 +60,17 @@ class ReactNativeAppTools: ObservableObject {
 	
 	private func startServer() {
 		self.server = createProcess("yarn start")
+		self.pipe = Pipe()
+		self.server!.standardOutput = self.pipe
+		let data = self.pipe!.fileHandleForReading
+		data.readabilityHandler = self.handleOutput
 		self.server!.launch()
 	}
 	
-	private func startServerOutputPipe() {
-		self.pipe = Pipe()
-		self.server!.standardOutput = self.pipe
-		let data = self.pipe!.fileHandleForReading.readDataToEndOfFile()
-		self.output = String(data: data, encoding: .utf8)!
-		print(self.output)
+	private func handleOutput(pipe: FileHandle) {
+		let line = String(data: pipe.availableData, encoding: .utf8)
+		DispatchQueue.main.async {
+			self.output.append(line!)
+		}
 	}
 }
