@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BA0045F225CB86CD00D538B4 /* TerminalText.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0045F125CB86CD00D538B4 /* TerminalText.swift */; };
+		BA0045F525CB8DC000D538B4 /* NavLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0045F425CB8DC000D538B4 /* NavLink.swift */; };
 		BA12E72425C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E72325C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift */; };
 		BA12E72625C9D0CA00E8CEA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA12E72525C9D0CA00E8CEA5 /* ContentView.swift */; };
 		BA12E72825C9D0CB00E8CEA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA12E72725C9D0CB00E8CEA5 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		BA0045F125CB86CD00D538B4 /* TerminalText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalText.swift; sourceTree = "<group>"; };
+		BA0045F425CB8DC000D538B4 /* NavLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavLink.swift; sourceTree = "<group>"; };
 		BA12E72025C9D0CA00E8CEA5 /* React Native Tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "React Native Tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA12E72325C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = React_Native_ToolsApp.swift; sourceTree = "<group>"; };
 		BA12E72525C9D0CA00E8CEA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			children = (
 				BA12E73625C9EEB600E8CEA5 /* ActionButton.swift */,
 				BA0045F125CB86CD00D538B4 /* TerminalText.swift */,
+				BA0045F425CB8DC000D538B4 /* NavLink.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				BA12E72625C9D0CA00E8CEA5 /* ContentView.swift in Sources */,
 				BA12E73B25C9FBCD00E8CEA5 /* Stocket.swift in Sources */,
 				BA12E72425C9D0CA00E8CEA5 /* React_Native_ToolsApp.swift in Sources */,
+				BA0045F525CB8DC000D538B4 /* NavLink.swift in Sources */,
 				BA12E74325CB3C0600E8CEA5 /* ReactNativeLogs.swift in Sources */,
 				BA0045F225CB86CD00D538B4 /* TerminalText.swift in Sources */,
 				BA12E73E25CB39B700E8CEA5 /* ReactNativeAppTools.swift in Sources */,

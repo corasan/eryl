@@ -14,16 +14,9 @@ struct ContentView: View {
 		NavigationView {
 			VStack(alignment: .leading) {
 				VStack {
-					NavigationLink(
-						destination: ReactNativeLogs()) {
-						Text("React Native Logs")
-					}
-					.buttonStyle(CustomButtonStyle())
-					NavigationLink(
-						destination: Text("Destination2")) {
-						Text("CodePush Logs")
-					}
-					.buttonStyle(CustomButtonStyle())
+					NavLink("React Native Logs", destination: AnyView(ReactNativeLogs()))
+					NavLink("CodePush Logs", destination: AnyView(ReactNativeLogs()))
+					Spacer()
 				}
 				
 				VStack(alignment: .leading) {
@@ -33,10 +26,10 @@ struct ContentView: View {
 					ActionButton(label: "Run Device", icon: "iphone")
 				}
 				.padding(.top, 50)
+				.padding(.horizontal, 25)
 				Spacer()
 			}
 			.padding(.vertical, 40)
-			.padding(.horizontal, 25)
 			.frame(width: 280)
 		}
 	}
