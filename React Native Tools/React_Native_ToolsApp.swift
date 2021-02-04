@@ -16,6 +16,7 @@ struct React_Native_ToolsApp: App {
             ContentView()
 				.frame(width: 1240, height: 820, alignment: .center)
 				.environmentObject(app)
+				.environment(\.colorScheme, .dark)
         }
     }
 }

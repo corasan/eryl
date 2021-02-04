@@ -13,7 +13,7 @@ struct ContentView: View {
     var body: some View {
 		NavigationView {
 			VStack(alignment: .leading) {
-				VStack {
+				List {
 					NavLink("React Native Logs", destination: AnyView(ReactNativeLogs()))
 					NavLink("CodePush Logs", destination: AnyView(ReactNativeLogs()))
 					Spacer()

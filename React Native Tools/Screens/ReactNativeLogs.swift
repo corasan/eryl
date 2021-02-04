@@ -24,6 +24,7 @@ struct ReactNativeLogs: View {
 		.padding(.horizontal, 20)
 		.padding(.top, 10)
 		.padding(.bottom, 5)
+		.background(Color("terminalBg"))
 	}
 }
 
