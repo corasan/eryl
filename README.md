@@ -1,5 +1,5 @@
 # Eryl
-I created Eryl to speed up development when working on my React Native Projects
+I created Eryl to speed up development when working on my React Native Projects. Start the react native server, run on simulator or device, and send codepush updates (coming soon).
 
 ## What you need
 
