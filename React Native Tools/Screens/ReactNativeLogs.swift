@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+extension NSTextView {
+	open override var frame: CGRect {
+		didSet {
+			backgroundColor = .clear
+			drawsBackground = true
+		}
+	}
+}
+
 struct ReactNativeLogs: View {
 	@EnvironmentObject var app: ReactNativeAppTools
 	
@@ -14,10 +23,16 @@ struct ReactNativeLogs: View {
 		ScrollView {
 			HStack {
 				VStack(alignment: .leading) {
-					ForEach(Array(app.output.enumerated()), id: \.offset) { (i, el) in
-						TerminalText(text: el)
-					}
+					TextEditor(text: $app.output)
+						.font(Font.custom("MeloLGS NF", size: 16))
+						.background(Color("terminalBg"))
+						.disabled(true)
+						.disableAutocorrection(true)
+						.multilineTextAlignment(.leading)
+						.allowsTightening(false)
+					Spacer()
 				}
+				.background(Color("terminalBg"))
 				Spacer()
 			}
 		}

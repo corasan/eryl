@@ -12,7 +12,8 @@ class ReactNativeAppTools: ObservableObject {
 	@Published var isRunning: Bool = false
 	var server: Process?
 	var pipe: Pipe?
-	@Published var output = [String]()
+	@Published var outputArr = [String]()
+	@Published var output = ""
 	private var path = "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 	private var dispatchGroup: DispatchGroup
 	private var projectPath = "/Users/henry/Projects/ReactNative/stocket"
@@ -70,7 +71,8 @@ class ReactNativeAppTools: ObservableObject {
 	private func handleOutput(pipe: FileHandle) {
 		let line = String(data: pipe.availableData, encoding: .utf8)
 		DispatchQueue.main.async {
-			self.output.append(line!)
+			self.outputArr.append(line!)
+			self.output = self.outputArr.joined(separator: "")
 		}
 	}
 }
