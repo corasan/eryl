@@ -71,8 +71,14 @@ class ReactNativeAppTools: ObservableObject {
 	private func handleOutput(pipe: FileHandle) {
 		let line = String(data: pipe.availableData, encoding: .utf8)
 		DispatchQueue.main.async {
-			self.outputArr.append(line!)
-			self.output = self.outputArr.joined(separator: "")
+			let startedServerStr = "React Native Server Started"
+			if (!self.outputArr.contains(startedServerStr)) {
+				self.outputArr.append(startedServerStr)
+			}
+			if (line!.contains("WARN") || line!.contains("LOG") || line!.contains("BUNDLE")) {
+				self.outputArr.append(line!)
+				self.output = self.outputArr.joined(separator: "")
+			}
 		}
 	}
 }

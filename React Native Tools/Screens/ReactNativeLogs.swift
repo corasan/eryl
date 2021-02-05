@@ -18,22 +18,18 @@ extension NSTextView {
 
 struct ReactNativeLogs: View {
 	@EnvironmentObject var app: ReactNativeAppTools
+	var exampleList = ["LOG", "BUNDLE"]
 	
     var body: some View {
 		ScrollView {
-			HStack {
-				VStack(alignment: .leading) {
-					TextEditor(text: $app.output)
-						.font(Font.custom("MeloLGS NF", size: 16))
-						.background(Color("terminalBg"))
-						.disabled(true)
-						.disableAutocorrection(true)
-						.multilineTextAlignment(.leading)
-						.allowsTightening(false)
+			VStack(alignment: .leading) {
+				ForEach(app.outputArr, id: \.self) { str in
+					TerminalText(str)
+				}
+				HStack {
+					Spacer()
 					Spacer()
 				}
-				.background(Color("terminalBg"))
-				Spacer()
 			}
 		}
 		.padding(.horizontal, 20)
