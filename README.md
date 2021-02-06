@@ -1,4 +1,5 @@
 # Eryl
+
 I created Eryl to speed up development when working on my React Native Projects. Start the react native server, run on simulator or device, and send codepush updates (coming soon).
 
 ## What you need
@@ -9,16 +10,17 @@ There are a few things you should do before you proceed.
 
 ```json
 {
-  "scripts": {
-    "ios": "npx react-native run-ios --simulator",
-    "ios-device": "npx react-native run-ios --device \"[NAME OF YOUR iOS DEVICE]\""
-  }
+	"scripts": {
+		"ios": "npx react-native run-ios --simulator",
+		"ios-device": "npx react-native run-ios --device \"[NAME OF YOUR iOS DEVICE]\""
+	}
 }
 ```
 
 ### 2. Open this project in Xcode and edit `ReactNativeAppTools.swift`
 
 Edit the `projectPath` variable on line 18 with the path to your React Native project root directory.
+
 ```swift
 private var projectPath = "path/to/your/project"
 
