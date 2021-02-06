@@ -22,6 +22,12 @@ class ReactNativeAppTools: ObservableObject {
 		self.server = nil
 		self.pipe = nil
 		self.dispatchGroup = DispatchGroup()
+		
+		NotificationCenter.default.addObserver(forName: NSApplication.willTerminateNotification, object: nil, queue: .main) { _ in
+			if(self.isRunning) {
+				self.server!.terminate()
+			}
+		}
 	}
 	
 	func start() {

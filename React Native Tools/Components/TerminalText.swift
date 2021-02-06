@@ -31,7 +31,6 @@ struct TerminalText: View {
 			Divider()
 		}
 		.padding(.top, 12)
-		.frame(minWidth: .infinity)
 		.contextMenu(ContextMenu(menuItems: {
 			Button("Copy Log") {
 				copy(text)

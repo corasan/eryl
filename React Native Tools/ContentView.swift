@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
 	@EnvironmentObject var app: ReactNativeAppTools
 	@State var showFirst = true
-
+	
     var body: some View {
 		NavigationView {
 			VStack(alignment: .leading) {
@@ -37,9 +37,6 @@ struct ContentView: View {
 			}
 			.padding(.vertical, 40)
 			.frame(width: 280)
-		}
-		.onAppear {
-			self.showFirst = true
 		}
 	}
 }
