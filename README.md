@@ -2,6 +2,8 @@
 
 I created Eryl to speed up development when working on my React Native Projects. Start the react native server, run on simulator or device, and send codepush updates (coming soon).
 
+![eryl screenshot](./img/screenshot.png)
+
 ## What you need
 
 There are a few things you should do before you proceed.
